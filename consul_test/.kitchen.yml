@@ -17,15 +17,24 @@ suites:
     driver:
       network:
       - ["private_network", {ip: "192.168.33.33"}]
+    attributes:
+      consul:
+        bind_addr: 192.168.33.33
   - name: server2
     run_list:
     - recipe[consul_test::server]
     driver:
       network:
       - ["private_network", {ip: "192.168.33.34"}]
+    attributes:
+      consul:
+        bind_addr: 192.168.33.34
   - name: server3
     run_list:
     - recipe[consul_test::server]
     driver:
       network:
       - ["private_network", {ip: "192.168.33.35"}]
+    attributes:
+      consul:
+        bind_addr: 192.168.33.35
