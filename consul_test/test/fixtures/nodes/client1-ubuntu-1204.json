@@ -1,0 +1,17 @@
+{
+  "name": "client1-ubuntu-1204",
+  "automatic": {
+    "ipaddress": "192.168.33.36",
+    "recipes": [
+      "consul_test::client",
+      "consul::default",
+      "consul::install_binary",
+      "ark::default",
+      "consul::_service",
+      "runit::default"
+    ]
+  },
+  "run_list": [
+    "recipe[consul_test::client]"
+  ]
+}

@@ -38,3 +38,12 @@ suites:
     attributes:
       consul:
         bind_addr: 192.168.33.35
+  - name: client1
+    run_list:
+    - recipe[consul_test::client]
+    driver:
+      network:
+      - ["private_network", {ip: "192.168.33.36"}]
+    attributes:
+      consul:
+        bind_addr: 192.168.33.36
